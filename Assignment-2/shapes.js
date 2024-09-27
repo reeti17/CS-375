@@ -15,29 +15,35 @@ function init() {
     let axes = new Axes(gl);
     let cone = new Cone(gl, 20);     
     let sphere = new Sphere(gl, 30, 21);
-    let angle = 0.0;
-
+    let angleAxes = 0.0;
+    let angleCone = 0.0; 
+    let angleSphere = 0.0; 
+    
     function render() {
         // Add rendering code here
         gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
     
-        angle += 3.0;
-        angle %= 360.0;
-    
+        angleAxes += 3.0; 
+        angleAxes %= 360.0;
+        angleCone -= 3.0;  
+        angleCone %= 360.0;
+        angleSphere += 2.0;
+        angleSphere %= 360.0;
+        
         //Apply transformations to the shapes
             ms.push(); 
-            ms.scale(.50,.25,.50);
-            ms.translate(-1.0, 1.0, 0.0);
-            ms.rotate(angle, [0, 1, 0]); 
+            ms.scale(.50, .25, .50);
+            ms.translate(-1.0, 1.0, 0.0); 
+            ms.rotate(angleAxes, [0, 1, 0]); 
             axes.MV = ms.current(); 
-            axes.color = vec4(0.0, 0.0, 1.0, 1.0)
+            axes.color = vec4(0.0, 0.0, 1.0, 1.0);
             axes.draw(); 
             ms.pop();
     
             ms.push();
             ms.scale(.25,.25,.50);
-            ms.translate(-0.5, 0.5, 0.0);  
-            ms.rotate(angle, [0, 1, 0]); 
+            ms.translate(-0.8, -0.8, 0.0); 
+            ms.rotate(angleCone, [0, 1, 0]);
             cone.MV = ms.current();
             cone.color = vec4(1.0, 0.75, 0.8, 1.0);
             cone.draw();
@@ -45,7 +51,7 @@ function init() {
     
             ms.push();
             ms.translate(0.5, -0.5, 0.0);  
-            ms.rotate(angle, [1, 1, 0]);  
+            ms.rotate(angleSphere, [1, 0, 0]); 
             ms.scale(0.3, 0.2, 0.2); 
             sphere.MV = ms.current();
             sphere.color = vec4(1.0, 0.0, 0.0, 1.0);
