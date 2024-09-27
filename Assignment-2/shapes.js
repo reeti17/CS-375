@@ -7,7 +7,7 @@ function init() {
     if (!gl) { alert("Your Web browser doesn't support WebGL 2\nPlease contact Dave"); }
 
     // Add initialization code here
-    gl.clearColor(0.2, 0.2, 0.2, 1.0);
+    gl.clearColor(0.65, 0.85, 0.90, 1.0);
     gl.enable(gl.DEPTH_TEST);
 
     //Creating MatrixStack and 3 objects
@@ -27,6 +27,7 @@ function init() {
         //Apply transformations to the shapes
             ms.push(); 
             ms.scale(.50,.25,.50);
+            ms.translate(-1.0, 1.0, 0.0);
             ms.rotate(angle, [0, 1, 0]); 
             axes.MV = ms.current(); 
             axes.color = vec4(0.0, 0.0, 1.0, 1.0)
@@ -45,7 +46,7 @@ function init() {
             ms.push();
             ms.translate(0.5, -0.5, 0.0);  
             ms.rotate(angle, [1, 1, 0]);  
-            ms.scale(0.5, 0.5, 0.5); 
+            ms.scale(0.3, 0.2, 0.2); 
             sphere.MV = ms.current();
             sphere.color = vec4(1.0, 0.0, 0.0, 1.0);
             sphere.draw();
