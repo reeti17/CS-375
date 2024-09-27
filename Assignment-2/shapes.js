@@ -29,21 +29,25 @@ function init() {
             ms.scale(.50,.25,.50);
             ms.rotate(angle, [0, 1, 0]); 
             axes.MV = ms.current(); 
+            axes.color = vec4(0.0, 0.0, 1.0, 1.0)
             axes.draw(); 
             ms.pop();
     
             ms.push();
             ms.scale(.25,.25,.50);
-            ms.translate(0.0, 0.5, 0.5);
+            ms.translate(-0.5, 0.5, 0.0);  
+            ms.rotate(angle, [0, 1, 0]); 
             cone.MV = ms.current();
+            cone.color = vec4(1.0, 0.75, 0.8, 1.0);
             cone.draw();
             ms.pop();
     
             ms.push();
-            ms.translate(1.0, 0.5, 0.5);
-            ms.rotate(angle, [0, 1, 1]);
+            ms.translate(0.5, -0.5, 0.0);  
+            ms.rotate(angle, [1, 1, 0]);  
             ms.scale(0.5, 0.5, 0.5); 
             sphere.MV = ms.current();
+            sphere.color = vec4(1.0, 0.0, 0.0, 1.0);
             sphere.draw();
             ms.pop();
     
