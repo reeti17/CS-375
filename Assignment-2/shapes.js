@@ -25,7 +25,7 @@ function init() {
     
         angleAxes += 3.0; 
         angleAxes %= 360.0;
-        angleCone -= 3.0;  
+        angleCone -= 5.0;  
         angleCone %= 360.0;
         angleSphere += 2.0;
         angleSphere %= 360.0;
@@ -33,7 +33,7 @@ function init() {
         //Apply transformations to the shapes
             ms.push(); 
             ms.scale(.50, .25, .50);
-            ms.translate(-1.0, 1.0, 0.0); 
+            ms.translate(-0.5, 0.8, 0.0);
             ms.rotate(angleAxes, [0, 1, 0]); 
             axes.MV = ms.current(); 
             axes.color = vec4(0.0, 0.0, 1.0, 1.0);
@@ -52,7 +52,7 @@ function init() {
             ms.push();
             ms.translate(0.5, -0.5, 0.0);  
             ms.rotate(angleSphere, [1, 0, 0]); 
-            ms.scale(0.3, 0.2, 0.2); 
+            ms.scale(0.3, 0.3, 0.3); 
             sphere.MV = ms.current();
             sphere.color = vec4(1.0, 0.0, 0.0, 1.0);
             sphere.draw();
