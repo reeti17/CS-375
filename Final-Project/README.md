@@ -18,4 +18,8 @@ Make sure everything works and polish it together.
 I will use Three.js and JavaScript.
 
 ### Link for Fish Model
-[Koi Fish Model](https://sketchfab.com/3d-models/koi-fish-236859b809984f52b70c94fd040b9c59)
+[Koi Fish Model](https://sketchfab.com/3d-models/koi-fish-236859b809984f52b70c94fd040b9c59
+
+### Link to Presentation
+https://docs.google.com/presentation/d/16LpYM1nLfqNtsLZH3yi0gwM8zf_HPXsvL0y87DrEwRI/edit?usp=sharing
+
